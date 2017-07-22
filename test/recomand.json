@@ -1,0 +1,87 @@
+{
+  "data": {
+    "columnCode": "all_rec_dddj",
+    "columnEndTime": 253392455349000,
+    "count": 20,
+    "currentDate": "2015-09-29 18:31:54",
+    "icon": "http://e.dangdang.com/media/images/column/",
+    "isShowHorn": true,
+    "name": "当当独家",
+    "saleList": [
+      {
+        "isStore": 0,
+        "isSupportFullBuy": 1,
+        "mediaList": [
+          {
+            "authorPenname": "罗振宇",
+            "categoryIds": "ZSZM",
+            "categorys": "智商/智谋",
+            "chapterCnt": 144,
+            "coverPic": "http://img60.ddimg.cn/digital/product/58/4/1900465804_aa_cover.jpg?version=a9e582a7-00e1-4fbb-94b0-699e94e1f58a",
+            "descs": "本书精选《罗辑思维》的诸多思考，与你分享成长的洞见：《微革命》：转身、立定、呻吟、躺下，就是互联网时代个人崛起的方法《发现你的太平洋》：不跟存量较劲，而去寻找人生的增量《疯狂的投资》：有好点子马上行动，当实干家而不是评论家《和你赛跑的不是人》：放弃追求地位，转而追求联系；放弃追求效率，转而追求趣味《怎么当个明白人》：真正的牛人，就是在集体中可以按自己的想法思考的人……迷茫时代，怎么当个明白人？",
+            "isFull": 1,
+            "isStore": 0,
+            "lowestPrice": 14.9,
+            "mediaId": 1900465804,
+            "mediaType": 2,
+            "originalPrice": 42,
+            "price": 1490,
+            "priceUnit": 1,
+            "recommandWords": "",
+            "saleId": 1900465804,
+            "salePrice": 14.9,
+            "subTitle": "",
+            "title": "罗辑思维：迷茫时代的明白人"
+          }
+        ],
+        "saleId": 1900465804,
+        "type": 0
+      },
+      {
+        "isStore": 0,
+        "isSupportFullBuy": 1,
+        "mediaList": [
+          {
+            "authorId": 59600,
+            "authorPenname": "七堇年",
+            "categoryIds": "SB",
+            "categorys": "随笔",
+            "chapterCnt": 12,
+            "coverPic": "http://img60.ddimg.cn/digital/product/4/9/1900430409_aa_cover.jpg?version=4d9a1af5-a3e9-407d-8dc1-86fd010ab704",
+            "descs": "《近在远方》是10位作者的合集，作者阵容包括七堇年、安妮宝贝、陈丹燕、苏枕书、木遥、王泽、何袜皮、老王子、陈思呈、郭珊。整书以“情感旅行”为主题，作者们讲述了自己或笔中人在世界各地的游历，风光见闻，以及路上之爱，亲情友情。以情的博大，告诉大家旅行的美好意义，也是鼓励人们迈出脚下步伐，拥抱远方。　　再远的地方，只要愿意迈步，都不遥远；再近的地方，只要不愿意走出去，都遥不可及，这就是“近在远方”的意义。　　这世界其实无所谓远方，所有你的远方，都是他人的故乡。",
+            "isFull": 1,
+            "isStore": 0,
+            "lowestPrice": 8.99,
+            "mediaId": 1900430409,
+            "mediaType": 2,
+            "originalPrice": 32.8,
+            "price": 899,
+            "priceUnit": 5,
+            "recommandWords": "",
+            "saleId": 1900430409,
+            "salePrice": 8.99,
+            "title": "近在远方【精装本】"
+          }
+        ],
+        "price": 899,
+        "saleId": 1900430409,
+        "type": 0
+      }
+    ],
+    "systemDate": "1443522714156",
+    "tips": "",
+    "total": 49,
+	"platform":"Android"
+  },
+  "status": {
+    "code": 0,
+    "support" : [
+    	"ios",
+    	"Android",
+    	"WindowPhoe"
+    ]
+  },
+  "systemDate": 1443522714156
+}
+
+
