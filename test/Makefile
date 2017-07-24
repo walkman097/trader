@@ -13,5 +13,5 @@ json : $(OBJS)
 	$(CXX) -o json $(OBJS)
 
 clean:
-	$(RM) *.o 
+	$(RM)  *.o 
 

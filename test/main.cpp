@@ -18,7 +18,7 @@ int main() {
 			if (ret != -1) {
 				Parser parser;
 				parser.addData(buffer);
-				MyHandler handler;
+				ParserHandler handler;
 				parser.doParser(handler);
 			}
 		}

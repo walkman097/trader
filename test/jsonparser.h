@@ -44,84 +44,26 @@ using namespace rapidjson;
 		std::string categoryIds;
 	};	
 	
-	//struct MyHandler
-	struct MyHandler : public BaseReaderHandler<UTF8<>, MyHandler> {
-		bool Bool(bool b) {
-			//cout << __func__ << " Key " << key << " value " << b << endl; 
-			return true; 
-		}
-		
-		bool Uint(unsigned u) {
-			//cout << __func__ << " Key " << key << " value " << u << endl; 
-			if (key == "saleId") {
-				book.saleId = u;
-			} else if (key == "mediaId") {
-				book.mediaId = u;
-			} else if (key == "chapterCnt") {
-				book.chapterCnt = u;
-			}
-			return true; 
-		}
-		
-		bool Uint64(int64_t i) {
-			//cout << __func__ << " Key " << key << " value " << i << endl;
-			return true; 
-		}
+	//class ParserHandler
+	class ParserHandler : public BaseReaderHandler<UTF8<>, ParserHandler> {
+	public:
+		ParserHandler();
+		virtual ~ParserHandler();
 
-		bool Double(double d) {
-			//cout << __func__ << " Key " << key << " value " << d << endl;
-			if (key == "salePrice") {
-				book.salePrice = d;
-			} else if (key == "lowestPrice") {
-				book.lowestPrice = d;
-			}
-			return true; 
-		}
-		
-		bool String(const char* str, SizeType , bool ) { 
-			//cout << __func__ << " Key " << key << " value " << str << endl;
-			if (key == "authorPenname") {
-				book.author = str;
-			} else if (key == "title") {
-				book.title = str;
-			} else if (key == "coverPic") {
-				book.coverPic = str;
-			} else if (key == "descs") {
-				book.desc = str;
-			} else if (key == "categoryIds") {
-				book.categoryIds = str;	
-			} else if (key == "categorys") {
-				book.categorys = str;
-			}
-			return true;
-		}
-		
-		bool Key(const char* str, SizeType , bool ) { 
-			key = str;
-			//cout << __func__ << " key " << key << endl;
-			return true;
-		}
-		
-		bool StartObject() {
-			return true; 
-		}
+		virtual bool Bool(bool b);
+		virtual bool Uint(unsigned u);
+		virtual bool Uint64(int64_t i);
+		virtual bool Double(double d);
+		virtual bool String(const char* str, SizeType , bool );
+		virtual bool Key(const char* str, SizeType , bool );
+		virtual bool StartObject(); 
+		virtual bool EndObject(SizeType );
+		virtual bool StartArray();
+		virtual bool EndArray(SizeType );
+	
+		const std::list<Book>& getBookList();
 
-		bool EndObject(SizeType ) { 
-			if (key == "type") {
-				books.push_back(book);
-				book.clear();
-			}
-			return true; 
-		}
-
-		bool StartArray() {
-			return true; 
-		}
-
-		bool EndArray(SizeType ) {
-			return true; 
-		}
-		
+	private:
 		Book book;
 		std::string key;
 		std::list<Book> books;
@@ -140,11 +82,11 @@ using namespace rapidjson;
 			StringStream ss(data.c_str());
 			reader.Parse(ss, handler);
 
-			int len = handler.books.size();
-			cout << __func__ << " len " << len << endl;
-
-			std::list<Book>::iterator it = handler.books.begin();
-			for (; it != handler.books.end(); ++it) {
+			const std::list<Book> &books = handler.getBookList();
+			cout << __func__ << " len " << books.size() << endl;
+			
+			std::list<Book>::const_iterator it = books.begin();
+			for (; it != books.end(); ++it) {
 				cout << " saleId " << it->saleId << " mediaId " << it->mediaId
 					<< " chapterCnt " << it->chapterCnt << " salePrice " << it->salePrice
 					<< " lowestPrice " << it->lowestPrice << " desc " << it->desc 
